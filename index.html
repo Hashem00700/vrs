@@ -1,83 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mohamed Ahmed - Dashboards</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 50px;
-    }
+<meta charset="UTF-8">
+<title>VRS Operations Dashboard</title>
 
-    h1 {
-      margin-bottom: 5px;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    p {
-      color: #94a3b8;
-    }
+body {
+  display: flex;
+  background: #0f172a;
+  color: white;
+}
 
-    .link {
-      display: block;
-      background: #1e293b;
-      margin: 15px auto;
-      padding: 15px;
-      width: 300px;
-      border-radius: 12px;
-      text-decoration: none;
-      color: white;
-      font-size: 16px;
-      transition: 0.2s;
-    }
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #020617;
+  padding: 20px;
+  border-right: 1px solid #1e293b;
+}
 
-    .link:hover {
-      background: #38bdf8;
-      color: black;
-    }
-  </style>
+.sidebar h2 {
+  color: #38bdf8;
+  margin-bottom: 25px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px;
+  color: #cbd5f5;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.sidebar a:hover {
+  background: #1e293b;
+  color: #38bdf8;
+}
+
+/* Content */
+.content {
+  flex: 1;
+  padding: 40px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  color: #94a3b8;
+  margin-bottom: 30px;
+}
+
+/* Cards */
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.card h3 {
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+.link {
+  display: block;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background: #020617;
+  color: white;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.link:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+/* Tree */
+.tree ul {
+  list-style: none;
+  margin-left: 15px;
+}
+</style>
+
 </head>
+
 <body>
 
-  <h1>VRS Consolidated Links</h1>
-  <p>draft</p>
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>VRS Portal</h2>
 
-  <a class="link" href="https://p.datadoghq.eu/sb/3e6eed8a-b2d4-11ed-8754-da7ad0900005-950cd6ef1b44af134a97ff91d9cea2c9" target="_blank">
-     PT Dashboard
-  </a>
+  <a href="#main">🏠 Main Tools</a>
+  <a href="#dashboards">📊 Dashboards</a>
+  <a href="#kore">📡 Kore Tools</a>
+  <a href="#network">🌐 Network FLS</a>
+  <a href="#pg">💳 PG Tools</a>
+</div>
 
-  <a class="link" href="https://p.datadoghq.eu/sb/3e6eed8a-b2d4-11ed-8754-da7ad0900005-2d49c1b6fd7f539a32a02264d51552fd" target="_blank">
-     IE Dashboard
-  </a>
+<!-- Content -->
+<div class="content">
 
-  <a class="link" href="https://oneitsm.onbmc.com" target="_blank">
-     Remedy
-  </a>
+<h1>VRS Consolidated Links</h1>
+<p>Internal Operations Dashboard</p>
 
-  <a class="link" href="https://vfcit.datadoghq.eu  DataDog
-  </a>
+<!-- MAIN TOOLS -->
+<div class="card" id="main">
+  <h3>🛠 Main Tools</h3>
 
-  https://confluence.sp.vodafone.com/pages/viewpage.action?pageId=458748768&spaceKey=RFO&title=Contacts" target="_blank">
-     Contacts
+  <a class="link" href="https://oneitsm.onbmc.com" target="_blank">Remedy</a>
+
+  <div class="tree">
+    <strong>Admin Portal</strong>
+    <ul>
+      <li>
+        <a class="link" href="https://admin.travel.vodafone.com/" target="_blank">
+          Prod
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://admin.preprod.travel.vodafone.com/" target="_blank">
+          Preprod
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <a class="link" href="https://be.contentful.com/" target="_blank">Contentful</a>
+
+  <a class="link" href="https://vfcit.datadoghq.eu" target="_blank">DataDog</a>
+
+  <a class="link" href="https://confluence.sp.vodafone.com/pages/viewpage.action?pageId=458748768&spaceKey=RFO&title=Contacts" target="_blank">
+    Contacts
   </a>
 
   <a class="link" href="https://confluence.sp.vodafone.com/spaces/RFO/pages/570559312/Important+confluence+links" target="_blank">
-     Important Confluence Links
+    Important Confluence Links
   </a>
+
+</div>
+
+<!-- DASHBOARDS -->
+<div class="card" id="dashboards">
+  <h3>📊 Dashboards</h3>
 
   <a class="link" href="https://cps.jira.agile.vodafone.com/secure/RapidBoard.jspa?rapidView=34970&projectKey=TE&quickFilter=66625" target="_blank">
-     Jira Dashboard
+    Jira Dashboard
   </a>
 
-  <a class="link" href="https://admin.travel.vodafone.com/" target="_blank">
-     Admin Portal Prod
+  <a class="link" href="https://vfcit.datadoghq.eu/dashboard/8ei-rr9-gum/travel-e-sim-prod-dashboard" target="_blank">
+    Travel eSIM Prod Dashboard
   </a>
 
-  <a class="link" href="https://admin.preprod.travel.vodafone.com/" target="_blank">
-     Admin Portal Preprod
+</div>
+
+<!-- KORE -->
+<div class="card" id="kore">
+  <h3>📡 Kore Tools</h3>
+
+  <a class="link" href="https://portal.ioteconnect.com/" target="_blank">
+    IoT Portal
   </a>
+
+</div>
+
+<!-- NETWORK -->
+<div class="card" id="network">
+  <h3>🌐 Network FLS Tools</h3>
+
+  <a class="link" href="https://rtme.vodafone.com/" target="_blank">
+    RTME
+  </a>
+
+</div>
+
+<!-- PG -->
+<div class="card" id="pg">
+  <h3>💳 Payment Gateway Tools</h3>
+
+  <a class="link" href="https://authn-live.adyen.com" target="_blank">
+    Adyen
+  </a>
+
+</div>
+
+</div>
 
 </body>
 </html>
+``
