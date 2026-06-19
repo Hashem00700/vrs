@@ -93,13 +93,55 @@ p {
 /* Tree */
 .tree ul {
   list-style: none;
-  margin-left: 15px;
+  margin-left: 0;
+  padding: 0;
 }
+
+/* ✅ Horizontal environments (NEW) */
+.env-list {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.env-list li {
+  list-style: none;
+}
+
+/* Make them look like buttons */
+.env-list .link {
+  margin: 0;
+  padding: 8px 14px;
+  font-weight: bold;
+}
+
+/* Optional colors */
+.env-list li:nth-child(1) a { background: #7f1d1d; }  /* Prod */
+.env-list li:nth-child(2) a { background: #92400e; }  /* Preprod */
+.env-list li:nth-child(3) a { background: #0e7490; }  /* Test */
+
+
+.vois-label {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: #ffffff;
+  color: rgb(255, 0, 0);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 32px;
+  z-index: 1000;
+}
+
+
 </style>
 
 </head>
 
 <body>
+
+<div class="vois-label">VOIS</div>
 
 <!-- Sidebar -->
 <div class="sidebar">
@@ -126,25 +168,25 @@ p {
   <a class="link" href="https://oneitsm.onbmc.com" target="_blank">Remedy</a>
 
   <div class="tree">
-  <strong>Admin Portal</strong>
-  <ul>
-    <li>
-      <a class="link" href="https://admin.travel.vodafone.com/" target="_blank">
-        Prod
-      </a>
-    </li>
-    <li>
-      <a class="link" href="https://admin.preprod.travel.vodafone.com/" target="_blank">
-        Preprod
-      </a>
-    </li>
-    <li>
-      <a class="link" href="https://admin-vrs-test.non-prod.vf-cit.engineering.vodafone.com/" target="_blank">
-        Test
-      </a>
-    </li>
-  </ul>
-</div>
+    <strong>Admin Portal</strong>
+    <ul class="env-list">
+      <li>
+        <a class="link" href="https://admin.travel.vodafone.com/" target="_blank">
+          Prod
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://admin.preprod.travel.vodafone.com/" target="_blank">
+          Preprod
+        </a>
+      </li>
+      <li>
+        <a class="link" href="https://admin-vrs-test.non-prod.vf-cit.engineering.vodafone.com/" target="_blank">
+          Test
+        </a>
+      </li>
+    </ul>
+  </div>
 
   <a class="link" href="https://be.contentful.com/" target="_blank">Contentful</a>
 
@@ -189,7 +231,7 @@ p {
   <h3>🌐 Network FLS Tools</h3>
 
   <a class="link" href="https://rtme.vodafone.com/" target="_blank">
-    RTME
+    RTME "VPN Is Needed"
   </a>
 
 </div>
@@ -208,7 +250,7 @@ p {
 <div class="card" id="kb">
   <h3>🗂️ Knowledge Base</h3>
 
-  <a class="link" href="https://vodafone.sharepoint.com/sites/VRS-KTSessions/Shared%20Documents/Forms/AllItems.aspx?sortField=LinkFilename&isAscending=true&viewid=fe12262d%2D96c1%2D4ecf%2D8474%2Ddc7116a98fac&TeamsCID=6881ea06%2De868%2D40b9%2D818e%2D4edf99a6b288&OR=Teams%2DHL&CT=1781788156792&ovuser=68283f3b%2D8487%2D4c86%2Dadb3%2Da5228f18b893%2Cmohamed%2Eahmedibrahim%40vodafone%2Ecom&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiI0OS8yNjA1MTQxNjcxNSJ9" target="_blank">
+  <a class="link" href="https://vodafone.sharepoint.com/sites/VRS-KTSessions/Shared%20Documents/Forms/AllItems.aspx" target="_blank">
     KB
   </a>
 
@@ -218,4 +260,3 @@ p {
 
 </body>
 </html>
-``
