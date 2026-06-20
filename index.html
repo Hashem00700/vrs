@@ -165,6 +165,16 @@ p {
 <h1>VRS Centralized Links</h1>
 <p>Internal Operations Dashboard</p>
 
+<input type="text" id="search" placeholder="🔍 Search tools..." style="
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: none;
+  background: #020617;
+  color: white;
+">
+
 <!-- MAIN TOOLS -->
 <div class="card" id="main">
   <h3>🛠 Main Tools</h3>
@@ -262,5 +272,19 @@ p {
 
 </div>
 
+<script>
+  document.getElementById("search").addEventListener("keyup", function() {
+    let value = this.value.toLowerCase();
+  
+    document.querySelectorAll(".link").forEach(link => {
+      if (link.innerText.toLowerCase().includes(value)) {
+        link.style.display = "block";
+      } else {
+        link.style.display = "none";
+      }
+    });
+  });
+  </script>
+  
 </body>
 </html>
